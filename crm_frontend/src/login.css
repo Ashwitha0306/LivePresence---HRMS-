@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Base body styles === */
+body {
+  @apply bg-white text-gray-800;
+}
+
+.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+/* === Modal Styling === */
+.custom-modal .ant-modal-content {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark .custom-modal .ant-modal-content {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.dark .custom-modal .ant-modal-header {
+  background-color: #0f172a;
+}
+
+.dark .custom-modal .ant-modal-close-x {
+  color: #ffffff;
+}
+
+/* === Calendar Base === */
+.react-calendar {
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  border: none;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.react-calendar__tile {
+  position: relative;
+  padding: 1.2rem !important;
+  font-size: 1rem !important;
+  font-weight: 500;
+}
+
+/* === Weekend and Neighboring Month === */
+.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+  opacity: 0.6;
+}
+
+/* === Holiday Day Styling (Bright Blue) === */
+.react-calendar__tile.holiday-day {
+  background-color: #3b82f6 !important; /* Tailwind Blue-500 */
+  color: #ffffff !important;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* === Leave Day Styling (Lighter Blue) === */
+.react-calendar__tile.leave-day {
+  background-color: #60a5fa !important; /* Tailwind Blue-400 */
+  color: #ffffff !important;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* === Holiday + Leave Combination === */
+.react-calendar__tile.holiday-leave-day {
+  background: linear-gradient(to top left, #3b82f6 50%, #60a5fa 50%) !important;
+  color: #ffffff !important;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* === Dark Mode === */
+html.dark .react-calendar__tile.holiday-day {
+  background-color: #2563eb !important; /* Tailwind Blue-600 */
+  color: #e0f2fe !important; /* light text */
+}
+
+html.dark .react-calendar__tile.leave-day {
+  background-color: #1e40af !important; /* Tailwind Blue-800 */
+  color: #bfdbfe !important;
+}
+
+html.dark .react-calendar__tile.holiday-leave-day {
+  background-image: linear-gradient(to top left, #2563eb 50%, #1e40af 50%) !important;
+  color: #ffffff !important;
+}
+
+/* === Today and Active Tile === */
+.react-calendar__tile--now {
+  background: #dbeafe;
+  color: #1e3a8a;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.react-calendar__tile--active {
+  background: #3b82f6;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* === Hover Effects === */
+.react-calendar__tile:hover {
+  background-color: #dbeafe !important;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+html.dark .react-calendar__tile:hover {
+  background-color: #1e40af !important;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+  color: white !important;
+}
+
+/* === Custom Tile Variants (if used dynamically) === */
+.holiday-tile {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+}
+
+.leave-tile {
+  background-color: #60a5fa !important;
+  color: white !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.default-tile:hover {
+  background-color: #dbeafe !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* === Transition support for dark/light switch === */
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+}

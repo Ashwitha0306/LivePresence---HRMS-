@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fix: Use only this one body rule inside @layer base */
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+}
+
+/* Optional: Ant Design modal dark theme support */
+.custom-modal .ant-modal-content {
+  background-color: #ffffff;
+  color: #000000;
+}
+.dark .custom-modal .ant-modal-content {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+.dark .custom-modal .ant-modal-header {
+  background-color: #0f172a;
+}
+.dark .custom-modal .ant-modal-close-x {
+  color: #ffffff;
+}
+
+/* === Calendar Tile Base Styles === */
+.react-calendar {
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  border: none;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.react-calendar__tile {
+  position: relative;
+  padding: 1.2rem !important;
+  font-size: 1rem !important;
+  font-weight: 500;
+}
+
+/* Weekend and neighbor month */
+.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+  opacity: 0.6;
+}
+
+/* Light mode special tiles */
+.react-calendar__tile.holiday-day {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.react-calendar__tile.leave-day {
+  background-color: #dbeafe !important;
+  color: #1e3a8a !important;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.react-calendar__tile.holiday-leave-day {
+  background: linear-gradient(to top left, #fee2e2 50%, #dbeafe 50%) !important;
+  color: #111827 !important;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Dark mode tiles */
+html.dark .react-calendar__tile.holiday-day {
+  background-color: #7f1d1d !important;
+  color: #fee2e2 !important;
+}
+html.dark .react-calendar__tile.leave-day {
+  background-color: #4c1d95 !important;
+  color: #ddd6fe !important;
+}
+html.dark .react-calendar__tile.holiday-leave-day {
+  background-image: linear-gradient(to top left, #7f1d1d 50%, #4c1d95 50%) !important;
+  color: #fff !important;
+}
+
+/* Active and hover states */
+.react-calendar__tile--now {
+  background: #e6f7ff;
+}
+.react-calendar__tile--active {
+  background: #f0f0f0;
+}
+.react-calendar__tile:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+html.dark .react-calendar__tile:hover {
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+/* Optional custom tile variants */
+.holiday-tile {
+  background-color: #ef4444 !important;
+  color: white !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+}
+.leave-tile {
+  background-color: #a855f7;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.default-tile:hover {
+  background-color: #dbeafe;
+  border-radius: 9999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* Custom scrollbar for time log tables */
+.max-h-80::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.max-h-80::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.max-h-80::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 4px;
+}
+
+.max-h-80::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* slate-400 */
+}
+
+/* Dark mode styles */
+.dark .max-h-80::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+}
+
+.dark .max-h-80::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+}
+
+.dark .max-h-80::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}
+
+/* Firefox support */
+.max-h-80 {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f1f1;
+}
+
+.dark .max-h-80 {
+  scrollbar-color: #475569 #1e293b;
+}
+.react-calendar-heatmap {
+  width: 100%;
+  min-width: 600px;
+}
+
+.react-calendar-heatmap rect {
+  rx: 2px;
+  ry: 2px;
+}
+
+.react-calendar-heatmap text {
+  font-size: 8px;
+  fill: currentColor;
+}

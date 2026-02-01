@@ -1,0 +1,22 @@
+/* src/components/CalendarStyles.css */
+
+.calendar-present {
+  background-color: #4ade80 !important;
+  color: black !important;
+  font-weight: bold;
+  border-radius: 50% !important;
+}
+
+.calendar-absent {
+  background-color: #f87171 !important;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 50% !important;
+}
+
+.calendar-half-day {
+  background-color: #fde047 !important;
+  color: black !important;
+  font-weight: bold;
+  border-radius: 50% !important;
+}
